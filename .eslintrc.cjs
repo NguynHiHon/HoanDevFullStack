@@ -40,13 +40,11 @@ module.exports = {
     'comma-dangle': 1,
     'comma-spacing': 1,
     'arrow-spacing': 1,
-    // @mui
     'no-restricted-imports': [
       'error',
       {
         'patterns': ['^@mui/[^/]+$']
       }
     ]
-    // @mui
   }
 }
