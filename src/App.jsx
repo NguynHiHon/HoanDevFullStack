@@ -1,16 +1,87 @@
-import { useState } from 'react'
-import Button from '@mui/material/Button'
+import { useColorScheme } from '@mui/material/styles'
+import InputLabel from '@mui/material/InputLabel'
+import MenuItem from '@mui/material/MenuItem'
+import FormControl from '@mui/material/FormControl'
+import Select from '@mui/material/Select'
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
+import Box from '@mui/material/Box'
+import Container from '@mui/material/Container'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const ModeSelect = () => {
+  const { mode, setMode } = useColorScheme()
+  const handleChange = (event) => {
+    setMode(event.target.value)
+  }
 
   return (
-    <>
-      <div>HoanDEV bú tợn</div>
-      <Button variant="contained" color="primary" onClick={() => setCount(count + 1)}>
-        Count is {count}
-      </Button>
-    </>
+    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+      <InputLabel id="label-select-dark-light-mode">Mode</InputLabel>
+      <Select
+        labelId="label-select-dark-light-mode"
+        id="select-dark-light-mode"
+        value={mode}
+        label="Mode"
+        onChange={handleChange}
+      >
+        <MenuItem value="light">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <LightModeIcon fontSize='small'/> Light
+          </Box>
+        </MenuItem>
+        <MenuItem value="dark">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <DarkModeOutlinedIcon fontSize='small'/> Dark
+          </Box>
+        </MenuItem>
+        <MenuItem value="system">
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <SettingsBrightnessIcon fontSize='small'/> System
+          </Box>
+        </MenuItem>
+      </Select>
+    </FormControl>
+  )
+}
+
+
+function App() {
+  return (
+    <Container disableGutters maxWidth={false} sx={{ height: '100vh', backgroundColor: 'primary.main' }}>
+      <Box sx={{
+        backgroundColor:'primary.light',
+        width: '100%',
+        height: (theme) => theme.timeble.appBarHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <ModeSelect />
+      </Box>
+      <Box sx={{
+        backgroundColor:'primary.dark',
+        width: '100%',
+        height: (theme) => theme.timeble.boardBarHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        Board Bar
+      </Box>
+      <Box sx={{
+        backgroundColor:'primary.main',
+        width: '100%',
+        height: (theme) => theme.timeble.boardContentHeight,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        Board Content
+      </Box>
+
+    </Container>
   )
 }
 
