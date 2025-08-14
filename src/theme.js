@@ -3,8 +3,7 @@ import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 const theme = extendTheme({
   timeble:{
     appBarHeight:'48px',
-    boardBarHeight:'58px',
-    boardContentHeight:'calc(100vh - appBarHeight - boardBarHeight)'
+    boardBarHeight:'58px'
   },
   colorSchemes:{
     light:{

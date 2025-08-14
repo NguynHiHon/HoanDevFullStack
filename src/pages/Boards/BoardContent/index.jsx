@@ -4,7 +4,7 @@ function index() {
     <Box sx={{
       backgroundColor:'primary.main',
       width: '100%',
-      height: (theme) => theme.timeble.boardContentHeight,
+      height: (theme) => `calc(100vh - ${theme.timeble.appBarHeight} - ${theme.timeble.boardBarHeight})`,    
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between'
