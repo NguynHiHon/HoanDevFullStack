@@ -33,7 +33,7 @@ function Profile() {
         >
           <Avatar
             src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMfPgpPwirBMOeHwUv6Pr9s3kUNKn3YlDbYg&s'
-            sx={{ width: 30, height: 30 }}></Avatar>
+            sx={{ width: 36, height: 36 }}></Avatar>
         </IconButton>
       </Tooltip>
       <Menu

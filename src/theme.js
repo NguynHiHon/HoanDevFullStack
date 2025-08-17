@@ -1,24 +1,28 @@
-import { colors } from '@mui/material'
 import { cyan, deepOrange, teal, orange } from '@mui/material/colors'
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
+
+const APP_BAR_HEIGHT = '58px'
+const BOARD_BAR_HEIGHT = '68px'
+const BOARD_CONTENT_HEIGHT = `calc(100vh - ${APP_BAR_HEIGHT} - ${BOARD_BAR_HEIGHT})`
 const theme = extendTheme({
   timeble:{
-    appBarHeight:'58px',
-    boardBarHeight:'68px'
+    appBarHeight:APP_BAR_HEIGHT,
+    boardBarHeight:BOARD_BAR_HEIGHT,
+    boardContentHeight:BOARD_CONTENT_HEIGHT
   },
   colorSchemes:{
-    light:{
-      palette: {
-        primary: teal,
-        secondary: deepOrange
-      }
-    },
-    dark: {
-      palette: {
-        primary: cyan,
-        secondary: orange
-      }
-    }
+    // light:{
+    // //   palette: {
+    // //     // primary: teal,
+    // //     secondary: deepOrange
+    // //   }
+    // // },
+    // // dark: {
+    // //   palette: {
+    // //     // primary: cyan,
+    // //     secondary: orange
+    // //   }
+    // // }
   },
   components: {
     MuiCssBaseline: {
@@ -28,11 +32,11 @@ const theme = extendTheme({
           height: '8px'
         },
         '::-webkit-scrollbar-thumb': {
-          backgroundColor: cyan[500],
+          backgroundColor: '#dcdde1',
           borderRadius: '8px'
         },
         '::-webkit-scrollbar-thumb:hover': {
-          backgroundColor: teal[100],
+          backgroundColor: 'white',
           borderRadius: '8px'
         }
       }
@@ -40,33 +44,34 @@ const theme = extendTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
+          borderWidth: '0.5px'
         }
       }
     },
     MuiOutlinedInput: {
       styleOverrides: {
-        root:({ theme }) => {
-          return {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem',
-            '.MuiOutlinedInput-notchedOutline': {
-              borderColor: theme.palette.primary.light
-            }
-          }
+        root:{
+          fontSize: '0.875rem',
+          '& fieldset': { borderWidth: '0.5px !important' },
+          '&:hover fieldset': { borderWidth: '1px !important' },
+          '&.Mui-focused fieldset': { borderWidth: '1px !important' }
         }
       }
     },
     MuiInputLabel: {
       styleOverrides: {
-        root:({ theme }) => {
-          return {
-            color: theme.palette.primary.main,
-            fontSize: '0.875rem'
-          }
+        root:{ fontSize: '0.875rem' }
+      }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root:{
+          '&.MuiTypography-body1': { fontSize: '0.875rem' }
         }
       }
     }
   }
+
 })
 export default theme
