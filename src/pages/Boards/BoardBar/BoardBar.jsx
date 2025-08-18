@@ -99,32 +99,32 @@ function BoardBar() {
           <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>
           <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>  <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>  <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>  <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>  <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>  <Tooltip title="HoanDev">
             <Avatar
               alt="hoandev"
-              src="/static/images/avatar/1.jpg" />
+              src=" " />
           </Tooltip>
 
 
