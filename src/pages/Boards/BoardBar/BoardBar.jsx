@@ -10,8 +10,9 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
-import { colors } from '@mui/material'
-function BoardBar() {
+import { upCaseFirst } from '~/utils/formatters'
+function BoardBar({ board }) {
+
   const MENU_STYLE ={
     color: 'white',
     bgcolor: 'transparent',
@@ -42,13 +43,13 @@ function BoardBar() {
         <Chip
           sx={MENU_STYLE}
           icon={<Dashboard/>}
-          label="HoanDev WeekTimetable"
+          label={board?.title || 'Board Title'}
           onClick={() => {}}
         />
         <Chip
           sx={MENU_STYLE}
           icon={<VpnLockIcon />}
-          label="Public/Private Board"
+          label={upCaseFirst(board?.type)}
           onClick={() => {}}
         />
         <Chip

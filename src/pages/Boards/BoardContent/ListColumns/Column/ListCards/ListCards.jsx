@@ -9,7 +9,7 @@ import GroupIcon from '@mui/icons-material/Group'
 import CommentIcon from '@mui/icons-material/Comment'
 import AttachmentIcon from '@mui/icons-material/Attachment'
 import Cards from './Card/Card'
-function ListCards() {
+function ListCards({ cards }) {
 
   return (
     <Box sx={{
@@ -27,9 +27,11 @@ function ListCards() {
           ${theme.timeble.columnFooterHeight}
           )`
     }}>
-      <Cards/>
-
-
+      {
+        cards?.map(card => (
+          <Cards key={card._id} card={card} />
+        ))
+      }
     </Box>
   )
 }
