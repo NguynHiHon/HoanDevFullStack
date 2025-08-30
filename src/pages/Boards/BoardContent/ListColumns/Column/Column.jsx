@@ -14,7 +14,7 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever'
 import AddCardIcon from '@mui/icons-material/AddCard'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
 import ListCards from './ListCards/ListCards'
-function Column() {
+function Column({ column }) {
 
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
@@ -49,7 +49,7 @@ function Column() {
           fontWeight: 'bold',
           cursor: 'pointer',
           fontSize: '1rem'
-        }}>Column Header</Typography>
+        }}>{column.title}</Typography>
       <Box>
         <Tooltip title="more options">
           <ExpandMoreIcon
@@ -105,7 +105,7 @@ function Column() {
 
     {/* body */}
 
-    <ListCards />
+    <ListCards cards={column.cards} />
 
     {/* footer */}
     <Box sx={{
